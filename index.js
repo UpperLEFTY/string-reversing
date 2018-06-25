@@ -1,3 +1,5 @@
+// iterative
+
 function reverse(str){
   var rtnStr = [];
   if(!str || typeof str != 'string' || str.length < 2 ) return str;
