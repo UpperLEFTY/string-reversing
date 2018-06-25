@@ -1,4 +1,4 @@
-// iterative
+// iterative method
 
 function reverse(str){
   var rtnStr = [];
