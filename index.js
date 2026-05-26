@@ -1,10 +1,10 @@
 // iterative method
 
 function reverse(str){
-  var rtnStr = [];
+  const rtnStr = [];
   if(!str || typeof str != 'string' || str.length < 2 ) return str;
   
-  for(var i = str.length-1; i>=0;i--){
+  for(let i = str.length-1; i>=0;i--){
     rtnStr.push(str[i]);
   }
   return rtnStr.join('');
@@ -15,10 +15,14 @@ function reverse(str){
 
 // recursive method
 
-
 function reverse(str){
-  if(!str || str.length <2) return str;
-  
-  return str.split('').reverse().join('');
+  if (typeof str !== 'string' || str.length < 2) return str;
+
+  function helper(chars, index) {
+    if (index <= 0) return chars[0];
+    return chars[index] + helper(chars, index - 1);
+  }
+
+  const chars = str.split('');
+  return helper(chars, chars.length - 1);
 }
-        
